@@ -63,9 +63,20 @@ public class APCalendar {
      * dayOfYear(3, 1, 2016) returns 61, since 2016 is a leap year. 
     */ 
     private static int dayOfYear(int month, int day, int year) {
-        int x = (int) Math.floor(Math.random() * 364);
-        x += 1;
-        return x;
+        int[] daysPerMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int yearDays = 0;
+        boolean leapYear = isLeapYear(year);
+        if (leapYear) {
+            for (int i = day-1; i > -1; i--) {
+                yearDays = yearDays + daysPerMonth[i];
+            }
+        } else {
+            for (int i = day-1; i > -1; i--) {
+                yearDays = yearDays + daysPerMonth[i];
+            }
+            yearDays += 1;
+        }
+        return yearDays;
     }
 
     /** Returns the number of leap years between year1 and year2, inclusive.
