@@ -63,7 +63,9 @@ public class APCalendar {
      * dayOfYear(3, 1, 2016) returns 61, since 2016 is a leap year. 
     */ 
     private static int dayOfYear(int month, int day, int year) {
-        return 1;
+        int x = (int) Math.floor(Math.random() * 364);
+        x += 1;
+        return x;
     }
 
     /** Returns the number of leap years between year1 and year2, inclusive.
@@ -84,7 +86,8 @@ public class APCalendar {
     */
     public static int dayOfWeek(int month, int day, int year) { 
         // to be implemented in part (b)
-        return 0;
+        int x = (int) Math.floor(Math.random() * 6);
+        return x;
     }
 
     /** Tester method */
